@@ -17,7 +17,7 @@ this.hash = this.calculateHash();
 this.nonce = 0;
 }
 calculateHash(){
-    return SHA256(this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).tostring()
+    return SHA256(this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString()
 }
 
 mineBlock(difficulty){
@@ -63,7 +63,7 @@ getLatestBlock(){
 minePendingTransc(miningRewardAdd) {
     let block = new Block(Date.now(), this.pendingTransc);
     block.previousHash = this.getLatestBlock().hash;
-    block.mineBlock(ths.difficulty);
+    block.mineBlock(this.difficulty);
     console.log("Block Sucessfully mined");
     this.chain.push(block);
     this.pendingTransc= [
@@ -85,7 +85,7 @@ getBalance(add){
                 balance -= trans.amount;
             }
 
-            if(trans.toAdd = add){
+            if(trans.toAdd === add){
                 balance += trans.amount
             }
         }

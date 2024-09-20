@@ -115,8 +115,8 @@ isChainValid(){
 
 let masterCoin = new Blockchain();
 masterCoin.createTransc(new transactions('Rohit', 'Aman', 500));
-masterCoin.createTransc(new transactions('Aman', 'Bharti', 600));
-masterCoin.createTransc(new transactions('Bharati', 'Aryan', 500));
+masterCoin.createTransc(new transactions('Aman', 'Nikeet', 600));
+masterCoin.createTransc(new transactions('Nikeet', 'Aryan', 500));
 
 console.log('\nSatrting the mining....');
 masterCoin.minePendingTransc('Shantanu');
@@ -126,7 +126,7 @@ masterCoin.minePendingTransc('Shantanu');
 
 console.log('\nBalance of Shantanu is ',masterCoin.getBalance('Shantanu'));
 console.log('\nBalance of Rohit is ',masterCoin.getBalance('Rohit'));
-
+console.log('\nBalance of Nikeet is ',masterCoin.getBalance('Nikeet'));
 
 
 
